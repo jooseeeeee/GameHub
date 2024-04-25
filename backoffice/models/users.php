@@ -30,6 +30,7 @@ class users
             session_start();
             $_SESSION['id'] = $row['id'];
             $_SESSION['sesion'] = 1;
+            echo "true";
             exit();
 
         } else {
@@ -58,7 +59,7 @@ class users
                 $filt->execute();
                 $filt->close();
 
-                echo "Usuario registrado correctamente.";
+                echo "true";
             }
         } else {
             echo "Por favor rellena todos los campos.";

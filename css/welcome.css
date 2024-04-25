@@ -128,6 +128,11 @@
     text-decoration: none !important;
 }
 
+.error-box {
+  /* background-color: red; */
+  min-height: 20px;
+}
+
 @media (max-width: 720px) {
     .footer {
       text-align: left;

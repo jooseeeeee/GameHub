@@ -9,7 +9,7 @@
             class="fa-solid fa-eye"></i></button>
 </div>
 <div class="text-center">
-    <button class="btn btn-danger btn-sm delete-acc" title="Eliminar cuenta">Eliminar cuenta</button>
+    <button class="btn btn-danger btn-sm delete-account" title="Eliminar cuenta">Eliminar cuenta</button>
     <button class="btn btn-dark btn-sm modify-info" title="Modificar datos">Modificar datos</button>
 </div>
 
@@ -65,22 +65,29 @@
             });
         });
 
-        //Función para eliminar cuenta
-        $(".delete-acc").click(function () {
+        //Función para mostrar la modal de eliminar cuenta
+        $(".delete-account").click(function () {
+            $(".modal").modal("show");
+        });
+
+        
+        $(".delete-confirm").click(function () {
             var option = 6;
-            if (confirm("¿Seguro que quieres eliminar la cuenta?")) {
-                $.ajax({
-                    url: "backoffice/controllers/users-controller.php",
-                    method: "POST",
-                    data: {
-                        option: option
-                    },
-                    success: function (a) {
-                        alert(a);
-                        window.location.href = "index.php";
-                    },
-                });
-            }
+            $.ajax({
+                url: "backoffice/controllers/users-controller.php",
+                method: "POST",
+                data: {
+                    option: option
+                },
+                success: function (a) {
+                    window.location.href = "index.php";
+                },
+            });
+        });
+
+
+        $(".delete-cancel").click(function () {
+            $(".modal").modal("hide");
         });
     });
 </script>

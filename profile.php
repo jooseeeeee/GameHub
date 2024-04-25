@@ -23,6 +23,22 @@ require "backoffice/security/security.php";
 </head>
 
 <body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar cuenta</h5>
+                </div>
+                <div class="modal-body">
+                    ¿Seguro que quieres eliminar tu cuenta?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark delete-cancel">Cancelar</button>
+                    <button type="button" class="btn btn-danger delete-confirm">Si</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
@@ -152,7 +168,7 @@ require "backoffice/security/security.php";
                     option: option
                 },
                 success: function (a) {
-
+                    window.location.reload();
                 }
             });
         });

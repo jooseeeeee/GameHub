@@ -296,6 +296,7 @@ require "backoffice/security/security.php";
                         option: option
                     },
                     success: function (a) {
+                        window.location.reload();
                     }
                 });
             });

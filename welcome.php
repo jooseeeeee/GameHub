@@ -18,18 +18,18 @@
 </head>
 
 <body>
-<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body mt-2">
-               <h6 class="modal-text lead"></h6> 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary modal-close-btn">Cerrar</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-body mt-2">
+          <h6 class="modal-text lead"></h6>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-btn">Cerrar</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
   <header>
     <nav class="navbar color">
       <a href="index.php" class="div-logo">
@@ -45,7 +45,7 @@
       <div class="col-md-4 mb-4">
         <div class="form-container mt-3 login">
           <div class="form-header">
-            <h3 class="form-title pb-2">Inicia sesión en tu cuenta</h3>
+            <h3 class="form-title pb-2">Iniciar sesión</h3>
           </div>
           <div class="form-body mt-2">
             <div class="form-group">
@@ -59,9 +59,17 @@
                 <button class="btn btn-link eye-button" id="showPassword"><i class="fa-solid fa-eye"></i></button>
               </div>
             </div>
+            <div class="error-box">
+              <p class="text-danger small error-info-login">
+              <p>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-link text-dark" id="showRegister">¿No tienes cuenta?</button>
+            </div>
             <div class="text-right">
               <button type="button" class="btn btn-primary custom-btn-color" id="loginBtn">Iniciar sesión</button>
             </div>
+
           </div>
         </div>
 
@@ -86,14 +94,17 @@
                     class="fa-solid fa-eye"></i></button>
               </div>
             </div>
+            <div class="error-box">
+              <p class="text-danger small error-info-register">
+              <p>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-link text-dark" id="showLogin">¿Ya tienes cuenta?</button>
+            </div>
             <div class="text-right">
               <button type="button" class="btn btn-primary custom-btn-color" id="registerBtn">Registrarse</button>
             </div>
           </div>
-        </div>
-
-        <div class="text-center mt-3">
-          <button class="btn btn-link text-light" id="showRegister">¿No tienes cuenta?</button>
         </div>
       </div>
     </div>
@@ -137,21 +148,16 @@
         }
       });
 
-      //Función para alternar entre login y registro
+      //Función para mostrar registro
       $("#showRegister").click(function () {
-        var registerCard = $(".register");
-        var loginCard = $(".login");
-        var registerBtn = $("#showRegister");
+        $(".login").hide();
+        $(".register").show();
+      });
 
-        if (registerCard.is(":visible")) {
-          registerCard.hide();
-          loginCard.show();
-          registerBtn.text("¿No tienes cuenta?");
-        } else {
-          registerCard.show();
-          loginCard.hide();
-          registerBtn.text("¿Ya tienes cuenta?");
-        }
+      //Función para mostrar login
+      $("#showLogin").click(function () {
+        $(".login").show();
+        $(".register").hide();
       });
 
       //Función para enviar los datos del usuario registrado
@@ -170,8 +176,15 @@
             password: newPassword
           },
           success: function (a) {
-            alert(a);
-            window.location.reload();
+            if (a === "true") {
+              $(".login").show();
+              $(".register").hide();
+            } else {
+              $(".error-info-register").text(a);
+              $("#name").val("");
+              $("#new-username").val("");
+              $("#new-password").val("");
+            }
           },
         });
       });
@@ -190,8 +203,13 @@
             password: password
           },
           success: function (a) {
-            alert(a);
-            window.location.href = "index.php";
+            if (a === "true") {
+              window.location.href = "index.php";
+            } else {
+              $(".error-info-login").text(a);
+              $("#username").val("");
+              $("#password").val("");
+            }
           },
         });
       });
