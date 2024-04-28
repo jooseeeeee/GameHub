@@ -11,7 +11,7 @@ Sigue estos pasos para configurar el proyecto en un entorno local:
 
 ### Paso 1: Descargar e instalar XAMPP con la versión de PHP 8.2
 
-[XAMPP PHP 8.2](https://www.apachefriends.org/es/index.html).
+[XAMPP PHP 8.2](https://www.apachefriends.org/es/index.html)
 
 ### Paso 2: Clonar el proyecto y copiar los archivos
 
