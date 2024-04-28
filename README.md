@@ -18,7 +18,7 @@ Sigue estos pasos para configurar el proyecto en un entorno local:
 1. Clona el proyecto desde el repositorio utilizando el comando `git clone [url del repositorio]`.
 2. Copia todos los archivos de la carpeta `htdocs` del directorio del proyecto clonado.
 
-### Paso 3: Limpiar la carpeta `htdocs` de XAMPP y pegar los archivos
+### Paso 3: Limpiar la carpeta `htdocs` de XAMPP y pegar los archivos del paso 2
 
 1. Accede al directorio donde está instalado XAMPP.
 2. Busca y elimina todo el contenido dentro de la carpeta `htdocs`.
