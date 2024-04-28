@@ -40,7 +40,7 @@
                     <p class="text-secondary text-justify"><?php echo $game['description'] ?>
                     </p>
                     <p><strong>Fecha de lanzamiento: </strong><?php echo $game['formatedDate'] ?></p>
-                    <p><strong>Plataforma: </strong><?php echo $game['platforms'] ?></p>
+                    <p><strong>Plataforma: </strong><?php echo $game['platform'] ?></p>
                     <p><strong>Genero: </strong><?php echo $game['genre'] ?></p>
                     <p><strong>Puntuacion: </strong><?php echo $game['score'] ?>/10</p>
                 </div>
