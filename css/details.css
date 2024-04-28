@@ -115,12 +115,6 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .img-logo {
-    display: none;
-  }
-}
-
 @media (max-width: 720px) {
   .footer {
     text-align: left;

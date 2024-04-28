@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../models/users.php';
 
 $option = filter_input(INPUT_POST, 'option', FILTER_SANITIZE_NUMBER_INT);
@@ -38,4 +38,4 @@ switch ($option) {
         //ya que tenemos el ON DELETE CASCADE en las foreign keys)
         users::deleteUser();
         break;
-} 
+}

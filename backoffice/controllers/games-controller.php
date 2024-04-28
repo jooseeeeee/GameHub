@@ -38,20 +38,21 @@ switch ($option) {
             $(document).ready(function () {
                 $('.btn-custom').click(function () {
                     option = 6;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',
                         data: { option: option, id: id },
                         success: function (a) {
+                            $("title").text("Detalles");
                             $('html').scrollTop(0);
-                            $('html').html(a);
+                            $('body').html(a);
                         }
                     });
                 });
                 $(".btn-add").click(function () {
                     option = 7;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',
@@ -67,7 +68,7 @@ switch ($option) {
                 });
                 $(".btn-fav").click(function () {
                     option = 8;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',
@@ -97,20 +98,21 @@ switch ($option) {
             $(document).ready(function () {
                 $('.btn-custom').click(function () {
                     option = 6;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',
                         data: { option: option, id: id },
                         success: function (a) {
+                            $("title").text("Detalles");
                             $('html').scrollTop(0);
-                            $('html').html(a);
+                            $('body').html(a);  
                         }
                     });
                 });
                 $(".btn-add").click(function () {
                     option = 7;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',
@@ -126,7 +128,7 @@ switch ($option) {
                 });
                 $(".btn-fav").click(function () {
                     option = 8;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',
@@ -176,7 +178,7 @@ switch ($option) {
             $(document).ready(function () {
                 $(".btn-unfav").click(function () {
                     option = 9;
-                    var id = $(this).attr('gameID');
+                    let id = $(this).attr('gameID');
                     $.ajax({
                         type: 'POST',
                         url: 'backoffice/controllers/games-controller.php',

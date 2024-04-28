@@ -49,8 +49,9 @@ switch ($option) {
                         url: 'backoffice/controllers/games-controller.php',
                         data: { option: option, id: id },
                         success: function (a) {
+                            $("title").text("Detalles");
                             $('html').scrollTop(0);
-                            $('html').html(a);
+                            $('body').html(a);
                         }
                     });
                 });
@@ -106,12 +107,12 @@ switch ($option) {
                         url: 'backoffice/controllers/games-controller.php',
                         data: { option: option, id: id },
                         success: function (a) {
+                            $("title").text("Detalles");
                             $('html').scrollTop(0);
-                            $('html').html(a);
+                            $('body').html(a);
                         }
                     });
                 });
-
             });
         </script>
         <?php
