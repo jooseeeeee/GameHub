@@ -129,7 +129,7 @@ require "backoffice/security/security.php";
                 </div>
             </div>
             <div id="todosLosJuegos" class="row row-cols-1 row-cols-sm-2 row-cols-md-6 mt-3 pb-4"
-                style="max-height: 700px; overflow-y: auto;">
+                style="max-height: 750px; overflow-y: auto;">
 
             </div>
             <br>
