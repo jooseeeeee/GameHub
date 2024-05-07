@@ -8,12 +8,11 @@ class Games
         global $conn;
 
         include_once '../security/security.php';
-        $filt = $conn->prepare("SELECT id, title, photo FROM games where recommended = 1");
+        $filt = $conn->prepare("SELECT id, title, photo FROM games where recommended = 1 LIMIT 12");
         $filt->execute();
         $result = $filt->get_result();
         $filt->close();
         $games = array();
-
         while ($row = $result->fetch_assoc()) {
             array_push($games, $row);
         }
