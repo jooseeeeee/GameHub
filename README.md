@@ -29,7 +29,8 @@ Sigue estos pasos para configurar el proyecto en un entorno local:
 1. Inicia XAMPP como administrador y asegúrate de que los servicios de Apache y MySQL estén activos.
 2. Abre el panel de administración de MySQL desde el botón "Admin" en XAMPP.
 3. Crea una nueva base de datos con el nombre "gamehub".
-4. Ve a la sección de "Importar", selecciona el archivo SQL ubicado dentro de la carpeta `db` del proyecto clonado y haz clic en "Importar".
+4. Selecciona la base de datos creada.
+5. Ve a la sección de "Importar", selecciona el archivo SQL ubicado dentro de la carpeta `db` del proyecto clonado y haz clic en "Importar".
 
 ### Paso 5: Comprueba que los servicios están activos
 
